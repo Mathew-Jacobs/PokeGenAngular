@@ -24,4 +24,8 @@ export class RegistrationComponent implements OnInit {
       confirmPassword: new FormControl
     });
   }
+
+  onSubmit() {
+    console.log(this._registerForm.value);
+  }
 }
