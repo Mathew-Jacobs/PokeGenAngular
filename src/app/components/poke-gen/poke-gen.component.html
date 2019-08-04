@@ -1,0 +1,36 @@
+<div class="center-on-page">
+
+    <div class="pokedex">
+        <div class="main-section">
+            <div class="top-screen">
+                <div class="inner-screen" *ngIf="animal">
+                    <div style="padding: 5px">
+                        {{animal.name}}
+                    </div>
+                    <img style="height: 140px" src="{{animal.imgUrl}}" />
+                    <div class="type-wrapper" *ngIf="(type1 && type2)">
+                        <div *ngIf="(type1 == type2) else two">
+                            <div class="type" [style.background]="type1.color">
+                                <p>{{type1.type}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="red-button"></div>
+            </div>
+            <p>
+                {{animal.desc}}
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<ng-template #two>
+    <div class="type" [style.background]="type1.color">
+        <p>{{type1.type}}</p>
+    </div>
+    <div class="type" [style.background]="type2.color">
+        <p>{{type2.type}}</p>
+    </div>
+</ng-template>
